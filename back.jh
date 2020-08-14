@@ -1,0 +1,36 @@
+enum AppointmentStatus {
+	SCHEDULED, CANCELLED
+}
+
+entity Appointment {
+	name String
+    refKey String required unique /** a unique key to make it easy to reference an appointment */
+	status	AppointmentStatus	/** Is the apppointment scheduled / cancelled? */
+	date	LocalDate required	/** What day is the appointment? */
+    startMinute Integer min(0) max(1435) required /** minute in day appointment starts. */
+    durationInMinutes Integer min(5) max(1440) required	/** length of appointment, use 5 minute granularity */
+}
+
+entity Employee {
+	capacity	Integer required	/** the number of appointments an employee can handle at once */
+	name String
+    refKey String required unique
+}
+
+enum ScheduleBlockActivity {
+	AVAILABLE, BREAK
+}
+
+entity ScheduleBlock {
+	type ScheduleBlockActivity required
+    dayOfWeek Integer min(1) max(7) required
+    startMinute Integer min(0) max(1435) required /** minute in day block starts. */
+    durationInMinutes	Integer min(5) max(1440) required	/** minute length of block, use 5 minute granularity */
+}
+
+
+
+relationship ManyToOne {
+	Appointment to Employee
+    ScheduleBlock to Employee
+}

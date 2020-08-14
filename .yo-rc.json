@@ -1,0 +1,38 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "co.picayune.demo"
+    },
+    "jhipsterVersion": "6.10.1",
+    "applicationType": "microservice",
+    "baseName": "backend",
+    "packageName": "co.picayune.demo",
+    "packageFolder": "co/picayune/demo",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "gradle",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "YjA5MTU3NThlNWViNGI3Yjg0MzFkZGYzNzhmYTlhMTgwMjRlZjVlOTM0NDUwNWI1ZGE4ODg5NmM3NzkwYmViYjdhYWFhMDRhNmQ2NGZmNTYyNTQ1YjM1YjFhMGJiYjhkZjhhMjhlNTZlMTFkNTA3ZjIzMDYzMWZlMTIyYTQyZmI=",
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1597368193612,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "clientPackageManager": "npm",
+    "blueprints": [],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
