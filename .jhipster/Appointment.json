@@ -1,0 +1,77 @@
+{
+  "name": "Appointment",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "refKey",
+      "fieldType": "String",
+      "javadoc": "a unique key to make it easy to reference an appointment",
+      "fieldValidateRules": [
+        "required",
+        "unique"
+      ]
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "AppointmentStatus",
+      "javadoc": "Is the apppointment scheduled / cancelled?",
+      "fieldValues": "SCHEDULED,CANCELLED"
+    },
+    {
+      "fieldName": "date",
+      "fieldType": "LocalDate",
+      "javadoc": "What day is the appointment?",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "startMinute",
+      "fieldType": "Integer",
+      "javadoc": "minute in day appointment starts.",
+      "fieldValidateRules": [
+        "min",
+        "max",
+        "required"
+      ],
+      "fieldValidateRulesMin": "0",
+      "fieldValidateRulesMax": "1435"
+    },
+    {
+      "fieldName": "durationInMinutes",
+      "fieldType": "Integer",
+      "javadoc": "length of appointment, use 5 minute granularity",
+      "fieldValidateRules": [
+        "min",
+        "max",
+        "required"
+      ],
+      "fieldValidateRulesMin": "5",
+      "fieldValidateRulesMax": "1440"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "employee",
+      "otherEntityRelationshipName": "appointment",
+      "relationshipName": "employee",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200814013738",
+  "entityTableName": "appointment",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "backend",
+  "applications": "*",
+  "microserviceName": "backend"
+}

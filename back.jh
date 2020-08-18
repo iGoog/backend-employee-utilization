@@ -30,7 +30,7 @@ entity ScheduleBlock {
 
 
 
-relationship ManyToOne {
-	Appointment to Employee
-    ScheduleBlock to Employee
+relationship OneToMany {
+	Employee{appointment} to Appointment{employee}
+    Employee{scheduleBlock} to ScheduleBlock{employee}
 }

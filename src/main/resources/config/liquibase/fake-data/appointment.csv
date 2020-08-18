@@ -1,0 +1,11 @@
+id;name;ref_key;status;date;start_minute;duration_in_minutes
+1;mobile Games tangible;ap1;SCHEDULED;2020-08-23;600;30
+2;Manager Buckinghamshire microchip;ap2;SCHEDULED;2020-08-20;700;60
+3;Cambridgeshire;ap3;SCHEDULED;2020-08-24;800;45
+4;Ergonomic Wooden Car Quality-focused;ap4;CANCELLED;2020-08-23;900;30
+5;withdrawal;ap5;CANCELLED;2020-08-23;1000;60
+6;Bedfordshire Fiji;ap6;CANCELLED;2020-08-23;400;45
+7;Senior;ap7;SCHEDULED;2020-08-23;300;30
+8;Throughway Producer Maryland;ap8;SCHEDULED;2020-08-23;360;60
+9;Tasty;ap9;SCHEDULED;2020-08-23;480;45
+10;application Cape Verde Unions;ap10;CANCELLED;2020-08-23;500;120

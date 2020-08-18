@@ -1,0 +1,51 @@
+{
+  "name": "Employee",
+  "fields": [
+    {
+      "fieldName": "capacity",
+      "fieldType": "Integer",
+      "javadoc": "the number of appointments an employee can handle at once",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "refKey",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "unique"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "appointment",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "appointment"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "scheduleBlock",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "scheduleBlock"
+    }
+  ],
+  "changelogDate": "20200814013838",
+  "entityTableName": "employee",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "backend",
+  "applications": "*",
+  "microserviceName": "backend"
+}
