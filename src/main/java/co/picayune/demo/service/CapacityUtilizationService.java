@@ -17,14 +17,11 @@ import java.util.List;
 public class CapacityUtilizationService {
 
     private final AppointmentRepository appointmentRepository;
-    private final EmployeeRepository employeeRepository;
     private final ScheduleBlockRepository scheduleBlockRepository;
 
     public CapacityUtilizationService(AppointmentRepository appointmentRepository,
-                                      EmployeeRepository employeeRepository,
                                       ScheduleBlockRepository scheduleBlockRepository) {
         this.appointmentRepository = appointmentRepository;
-        this.employeeRepository = employeeRepository;
         this.scheduleBlockRepository = scheduleBlockRepository;
     }
 
@@ -63,12 +60,12 @@ public class CapacityUtilizationService {
         return utilizationList;
     }
 
-    private float calculateUtilization(long usage, long availability) {
+    float calculateUtilization(long usage, long availability) {
         if (availability == 0) return -1.0f;
         return  (float) (((double) usage) / ((double) availability ));
     }
 
-    private long[] calcDayOfWeekOccurances(LocalDate start, LocalDate end) {
+    long[] calcDayOfWeekOccurances(LocalDate start, LocalDate end) {
         long[] dayOfWeekOccurances = new long[7];
         int startDay = start.getDayOfWeek().getValue()-1; // Monday is 1, so 1-1 = 0;
         long days = ChronoUnit.DAYS.between(start, end);
